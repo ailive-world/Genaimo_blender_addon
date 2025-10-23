@@ -49,7 +49,7 @@ The addon requires a Genaimo API key and secret key:
 This project is licensed under the GNU General Public License v3.0 or later - see the [LICENSE](LICENSE) file for details.
 ## Support
 - Documentation: [Genaimo Docs](https://docs.ailive.world/docs/intro)
-- Issues: Please send mail to team@ailive.world
+- Issues: Please send an email to team@ailive.world
 - Website: [Genaimo](https://genaimo.ailive.world)
 - Discord: [Discord](https://discord.com/invite/8Yj4pMYsJN)
 ## Environments

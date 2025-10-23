@@ -1,0 +1,58 @@
+[project]
+name = "genaimo-addon"
+version = "1.0.0"
+description = "Text to Motion addon for Blender using Genaimo API"
+authors = [
+    {name = "Genaimo Team", email = "team@ailive.world"}
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Topic :: Multimedia :: Graphics :: 3D Rendering",
+]
+
+keywords = ["blender", "addon", "animation", "motion", "text-to-motion", "genaimo"]
+
+[project.urls]
+Homepage = "https://genaimo.ailive.world/"
+Documentation = "https://docs.ailive.world/docs/intro"
+Repository = "https://github.com/ailive-world/Genaimo_blender_addon"
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["genaimo_addon*"]
+
+[tool.black]
+line-length = 120
+target-version = ['py37']
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E203", "W503"]

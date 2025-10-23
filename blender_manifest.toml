@@ -1,0 +1,19 @@
+schema_version = "1.0.0"
+
+id = "genaimo_addon"
+version = "1.0.0"
+name = "Genaimo Addon"
+tagline = "Text to Motion addon for Blender using Genaimo AI API"
+type = "add-on"
+maintainer = "Genaimo Team <team@ailive.world>"
+license = ["SPDX:GPL-3.0-or-later",]
+blender_version_min = "4.2.0"
+blender_version_max = "4.9.9"
+
+tags = ["Animation", "Object", "System", "Development"]
+
+platforms = ["windows-x64", "macos-arm64", "linux-x64", "windows-arm64", "macos-x64"]
+
+
+[permissions]
+network = "Required to access the Genaimo API for motion generation"

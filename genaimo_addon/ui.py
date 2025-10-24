@@ -1,4 +1,5 @@
 import bpy 
+from . import ADDON_KEY
 import os
 #from properties import *
 
@@ -45,7 +46,8 @@ class B_PT_GenaimoConfigureApiKeyPanel(GenaimoPanelBase, bpy.types.Panel):
         # API 설정 상태 확인
         try:
             preferences = context.preferences
-            addon_prefs = preferences.addons[__package__].preferences
+            addon = preferences.addons.get(ADDON_KEY)
+            addon_prefs = getattr(addon, "preferences", None)
             
             # Preferences만 확인
             has_key = bool(addon_prefs.api_key if addon_prefs else "")
@@ -105,7 +107,8 @@ class B_PT_GenaimoCharacterPanel(GenaimoPanelBase):  # Class name corrected with
         # Show panel if API key and API secret are both set in Preferences
         try:
             preferences = context.preferences
-            addon_prefs = preferences.addons[__package__].preferences
+            addon = preferences.addons.get(ADDON_KEY)
+            addon_prefs = getattr(addon, "preferences", None)
             
             # Only check Preferences (permanent storage)
             has_key = bool(addon_prefs.api_key if addon_prefs else "")
@@ -133,7 +136,8 @@ class B_PT_GenaimoMotionListPanel(GenaimoPanelBase, bpy.types.Panel):
         # Show panel if API key and API secret are both set in Preferences
         try:
             preferences = context.preferences
-            addon_prefs = preferences.addons[__package__].preferences
+            addon = preferences.addons.get(ADDON_KEY)
+            addon_prefs = getattr(addon, "preferences", None)
             
             # Only check Preferences (permanent storage)
             has_key = bool(addon_prefs.api_key if addon_prefs else "")
@@ -367,7 +371,8 @@ class B_PT_GenaimoUIPanel(GenaimoPanelBase, bpy.types.Panel):  # Class name corr
         # Show panel if API key and API secret are both set in Preferences
         try:
             preferences = context.preferences
-            addon_prefs = preferences.addons[__package__].preferences
+            addon = preferences.addons.get(ADDON_KEY)
+            addon_prefs = getattr(addon, "preferences", None)
             
             # Only check Preferences (permanent storage)
             has_key = bool(addon_prefs.api_key if addon_prefs else "")
@@ -420,7 +425,8 @@ class B_PT_GenaimoStylizePanel(GenaimoPanelBase, bpy.types.Panel):
         # Show panel if API key and API secret are both set in Preferences
         try:
             preferences = context.preferences
-            addon_prefs = preferences.addons[__package__].preferences
+            addon = preferences.addons.get(ADDON_KEY)
+            addon_prefs = getattr(addon, "preferences", None)
             
             # Only check Preferences (permanent storage)
             has_key = bool(addon_prefs.api_key if addon_prefs else "")

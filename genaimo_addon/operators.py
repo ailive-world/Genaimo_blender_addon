@@ -1,4 +1,5 @@
-import bpy 
+import bpy
+from . import ADDON_KEY
 import json
 import requests
 import webbrowser
@@ -96,7 +97,8 @@ class OP_GENAIMO_GENERATE(bpy.types.Operator):  # No change needed here
                 
                 # Get API key from Preferences (permanent storage)
                 preferences = context.preferences
-                addon_prefs = preferences.addons[__package__].preferences
+                addon = preferences.addons.get(ADDON_KEY)
+                addon_prefs = getattr(addon, "preferences", None)
                 api_key = (addon_prefs.api_key or "").strip() if addon_prefs else ""
                 api_secret = (addon_prefs.api_secret or "").strip() if addon_prefs else ""
                 
@@ -250,7 +252,8 @@ class OP_GENAIMO_GENERATE_STYLIZED(bpy.types.Operator):  # No change needed here
         try :
             # Get API key from Preferences (permanent storage)
             preferences = context.preferences
-            addon_prefs = preferences.addons[__package__].preferences
+            addon = preferences.addons.get(ADDON_KEY)
+            addon_prefs = getattr(addon, "preferences", None)
             api_key = (addon_prefs.api_key or "").strip() if addon_prefs else ""
             api_secret = (addon_prefs.api_secret or "").strip() if addon_prefs else ""
             
@@ -383,7 +386,8 @@ class OP_GenaimoSaveApiKey(bpy.types.Operator):
 
     def execute(self, context):
         preferences = context.preferences
-        addon_prefs = preferences.addons[__package__].preferences
+        addon = preferences.addons.get(ADDON_KEY)
+        addon_prefs = getattr(addon, "preferences", None)
         
         if not addon_prefs:
             self.report({'ERROR'}, "Failed to access addon preferences")

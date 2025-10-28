@@ -11,14 +11,6 @@ A Blender addon that converts text descriptions to 3D character animations using
 -Genaimo account
 - Genaimo API key and secret
 ## Installation
-### From Blender Extensions (Recommended)
-> *Note: This installation option will be available once the Genaimo Add-on passes the official Blender Extensions review process.*
-
-1. Open **Blender**  
-2. Go to **Edit → Preferences → Get Extensions**  
-3. Search for **“Genaimo”**  
-4. Click **Install**
-### Manual Installation
 1. Download the latest release from [Releases](https://github.com/ailive-world/Genaimo_blender_addon/releases/)
 2. In Blender, go to Edit → Preferences → Add-ons
 3. Click "Install..." and select the downloaded zip file
